@@ -8,7 +8,7 @@ const AppRouter = () => {
   return (
     <>
       <Router history={appHistory}>
-       {/*<HeaderContainer/>*/}
+       {/*<HeaderContainer />*/}
         <main>
           <Switch>
             {routes.map(route => (
