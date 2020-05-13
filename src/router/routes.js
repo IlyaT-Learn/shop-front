@@ -1,5 +1,6 @@
 import React from "react";
 import ExampleContainer from "../container/ExmpleContainer";
+import LoginContainer from "../container/LoginContainer";
 
 const routes = [
   {
@@ -13,6 +14,10 @@ const routes = [
     //const { history, location } = useReactRouter();
     path: "/example",
     component: ExampleContainer
+  },
+  {
+    path: "/login",
+    component: LoginContainer
   }
 ];
 

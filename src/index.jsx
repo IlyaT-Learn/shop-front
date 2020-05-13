@@ -10,11 +10,13 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 import exampleSaga from "./saga/example.saga";
+import loginSaga from "./saga/login.saga";
 
 const store = initStore();
 const devTools = process.env.NODE_ENV === "development" ? <DevTools/> : null;
 
 sagaMiddleware.run(exampleSaga);
+sagaMiddleware.run(loginSaga);
 
 ReactDOM.render(
   <Provider store={store}>
