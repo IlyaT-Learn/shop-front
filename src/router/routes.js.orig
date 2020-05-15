@@ -1,7 +1,12 @@
+<<<<<<< HEAD
 import React from 'react';
 import ExampleContainer from '../container/ExmpleContainer';
 import LoginContainer from '../container/LoginContainer';
+=======
+import React from "react";
+import ExampleContainer from "../container/ExmpleContainer";
 import RegisterContainer from "../container/RegisterContainer";
+>>>>>>> origin/master
 
 const routes = [
   {
@@ -17,12 +22,13 @@ const routes = [
     component: ExampleContainer
   },
   {
-    path: '/register',
-    component: RegisterContainer
-  },
-  {
+<<<<<<< HEAD
     path: "/login",
     component: LoginContainer
+=======
+    path: '/register',
+    component: RegisterContainer
+>>>>>>> origin/master
   }
 ];
 
