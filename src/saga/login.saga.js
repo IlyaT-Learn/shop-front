@@ -1,33 +1,36 @@
-import {takeEvery, select, put, all} from "redux-saga/effects";
+import {takeEvery, select, put, all} from 'redux-saga/effects';
 import {
-    LOGIN_ASYNC_SUCCESS,
-    LOGIN_ASYNC_FAILURE
-} from "../action/login.action";
+    LOGIN_SUCCESS,
+    LOGIN_FAILURE
+} from '../action/login.action';
 
-function timeout(ms) {
-    return new Promise(resolve => setTimeout(() => {
-        resolve(console.log("ASYNC EVENT"));
-    }, ms));
-}
+const Request = async (data) => {
+    let response = await fetch('http://127.0.0.1:8000/Users/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json;charset=utf-8'
+        },
+        body: JSON.stringify(data.payload)
+    });
+    let token = await response.json();
 
-const emitRequest = async () => {
-    await timeout(1000);
+    localStorage.setItem('token', token)
+
     return true;
 };
 
-function* onLoadExample(action) {
+function* onLoadLogin(action) {
     try {
-        yield emitRequest();
-        yield put(LOGIN_ASYNC_SUCCESS(action.payload));
+        yield Request(action);
+        yield put(LOGIN_SUCCESS(action.payload));
     } catch (e) {
-        console.log(e.message);
-        yield put(LOGIN_ASYNC_FAILURE(e.message));
+        yield put(LOGIN_FAILURE(e.message));
     }
 }
 
 function* loginSaga() {
     yield all([
-        takeEvery("LOGIN_ASYNC_REQUEST", onLoadExample)
+        takeEvery("LOGIN_REQUEST", onLoadLogin)
     ]);
 }
 

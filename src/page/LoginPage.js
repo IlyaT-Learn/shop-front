@@ -1,36 +1,33 @@
-import React, {useCallback, useState} from "react";
-import InputWithLabel from "../components/atoms/InputWithLabel";
-import {useHistory} from "react-router-dom";
-import TextInformation from "../constants/localization";
+import React, {useCallback, useState} from 'react';
+import InputWithLabel from '../components/atoms/Input';
+import {useHistory} from 'react-router-dom';
+import TextOnPage from '../constants/localizationLoginPage';
 
 const LoginPage = ({onSubmitRequest}) => {
-
-    const infoSource = TextInformation().LoginPage;
+    const infoSource = TextOnPage.LoginPage;
     const history = useHistory();
     const [email, setEmail] = useState('');
     const handleEmailChange = useCallback((e) => {
         setEmail(e.target.value)
-    });
+    },[setEmail]);
 
     const [password, setPassword] = useState('');
     const handlePasswordChange = useCallback((e) => {
         setPassword(e.target.value)
-    });
+    }, [setPassword]);
 
     const handleLoginClick = useCallback(() => {
-        onSubmitRequest(GetFieldsValues())
-    }, [onSubmitRequest, GetFieldsValues()]);
+        let loginObject = {
+            email: email,
+            password: password
+        }
+
+        onSubmitRequest(loginObject)
+    }, [onSubmitRequest, email, password]);
 
     const handleContinueClick = useCallback(() => {
         history.push('/registration');
-    });
-
-    function GetFieldsValues() {
-        return {
-            email: email,
-            password: password
-        };
-    }
+    }, [history.push]);
 
     return (
         <>

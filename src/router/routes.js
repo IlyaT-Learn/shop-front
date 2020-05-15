@@ -1,6 +1,6 @@
-import React from "react";
-import ExampleContainer from "../container/ExmpleContainer";
-import LoginContainer from "../container/LoginContainer";
+import React from 'react';
+import ExampleContainer from '../container/ExmpleContainer';
+import LoginContainer from '../container/LoginContainer';
 
 const routes = [
   {
