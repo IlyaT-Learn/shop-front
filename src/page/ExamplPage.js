@@ -1,7 +1,6 @@
-import React from "react";
+import React from 'react';
 
 const ExamplPage = ({exampleRequestResult, exampleValue, onChangeValue, onFetchRequest}) => {
-
   return (
     <>
       <button onClick={onChangeValue}>Event</button>

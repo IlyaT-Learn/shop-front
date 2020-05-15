@@ -1,5 +1,6 @@
-import React from "react";
-import ExampleContainer from "../container/ExmpleContainer";
+import React from 'react';
+import ExampleContainer from '../container/ExmpleContainer';
+import LoginContainer from '../container/LoginContainer';
 import RegisterContainer from "../container/RegisterContainer";
 
 const routes = [
@@ -18,6 +19,10 @@ const routes = [
   {
     path: '/register',
     component: RegisterContainer
+  },
+  {
+    path: "/login",
+    component: LoginContainer
   }
 ];
 
