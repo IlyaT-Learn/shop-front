@@ -4,22 +4,25 @@ import {
     LOGIN_FAILURE
 } from '../action/login.action';
 
-const Request = async (data) => {
+const loginRequest = async (data) => {
     const response = await fetch('http://127.0.0.1:8000/Users/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
         },
-        body: JSON.stringify(data.payload)
+        body: JSON.stringify(data)
     });
     const user = await response.json();
-    if(!user) throw 'User is empty!';
+    if (!user) {
+        throw 'User is empty!';
+    }
+
     return user;
 };
 
-function* onLoadLogin(action) {
+function* onLoadLogin({payload}) {
     try {
-        const user = yield Request(action);
+        const user = yield loginRequest(payload);
         yield put(LOGIN_SUCCESS(user));
     } catch (e) {
         yield put(LOGIN_FAILURE(e.message));

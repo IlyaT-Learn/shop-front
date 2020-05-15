@@ -2,6 +2,7 @@ import React, {useCallback, useState} from 'react';
 import {NavLink, useHistory} from 'react-router-dom';
 import {TextField} from '@material-ui/core';
 import styles from '../LoginPage/LoginPage.module.scss';
+import {FAILURE} from '../../constants/request.constants';
 
 const LoginPage = ({onSubmitRequest, loginSubmitRequestStatus}) => {
     const history = useHistory();
@@ -52,9 +53,8 @@ const LoginPage = ({onSubmitRequest, loginSubmitRequestStatus}) => {
                     label="Password"
                     variant="outlined"
                 />
-                <NavLink to='/forgot_password'>Forgotten Password</NavLink>
                 <button onClick={handleLoginClick}>LOGIN</button>
-                {loginSubmitRequestStatus === 'FAILURE' ? <div className={styles.error}>Login Error!</div> : null}
+                {loginSubmitRequestStatus === FAILURE ? <div className={styles.error}>Login Error!</div> : null}
             </div>
         </div>
     );
