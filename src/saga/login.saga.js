@@ -14,6 +14,8 @@ const Request = async (data) => {
     });
     let token = await response.json();
 
+    if(!token) throw 'Token is empty!';
+
     localStorage.setItem('token', token)
 
     return true;

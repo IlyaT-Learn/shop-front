@@ -21,7 +21,6 @@ const LoginPage = ({onSubmitRequest}) => {
             email: email,
             password: password
         }
-
         onSubmitRequest(loginObject)
     }, [onSubmitRequest, email, password]);
 
