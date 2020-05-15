@@ -1,27 +1,29 @@
 import React, {useCallback, useEffect} from 'react';
-import LoginPage from '../page/LoginPage';
+import LoginPage from '../page/LoginPage/LoginPage';
 import {useDispatch, useSelector} from 'react-redux';
 import {LOGIN_REQUEST} from '../action/login.action'
 import {useHistory} from 'react-router-dom';
+import {SUCCESS} from '../constants/request.constants';
 
 const LoginContainer = () => {
     const dispatch = useDispatch();
     const history = useHistory();
     const loginState = useSelector(({login}) => login);
-    const loginSubmitRequestResult = loginState.submitRequest.result;
+    const loginSubmitRequestStatus = loginState.submitRequest.status;
 
     const handleFetchRequest = useCallback((data) => {
         dispatch(LOGIN_REQUEST(data));
     }, [dispatch]);
 
     useEffect(() => {
-        if (loginSubmitRequestResult === true) {
+        if (loginSubmitRequestStatus === SUCCESS) {
             history.push('/main');
         }
-    },[loginSubmitRequestResult])
+    },[loginSubmitRequestStatus]);
 
     return (
-        <LoginPage onSubmitRequest={handleFetchRequest}/>
+        <LoginPage onSubmitRequest={handleFetchRequest}
+                   loginSubmitRequestStatus={loginSubmitRequestStatus}/>
     );
 }
 

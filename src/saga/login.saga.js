@@ -5,26 +5,22 @@ import {
 } from '../action/login.action';
 
 const Request = async (data) => {
-    let response = await fetch('http://127.0.0.1:8000/Users/login', {
+    const response = await fetch('http://127.0.0.1:8000/Users/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
         },
         body: JSON.stringify(data.payload)
     });
-    let token = await response.json();
-
-    if(!token) throw 'Token is empty!';
-
-    localStorage.setItem('token', token)
-
-    return true;
+    const user = await response.json();
+    if(!user) throw 'User is empty!';
+    return user;
 };
 
 function* onLoadLogin(action) {
     try {
-        yield Request(action);
-        yield put(LOGIN_SUCCESS(action.payload));
+        const user = yield Request(action);
+        yield put(LOGIN_SUCCESS(user));
     } catch (e) {
         yield put(LOGIN_FAILURE(e.message));
     }

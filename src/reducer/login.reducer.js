@@ -10,7 +10,7 @@ const defaultState = {
     emailAddressValue: '',
     submitRequest: {
         status: UNCALLED,
-        result: "Async event hasn't been called",
+        result: null,
         error: null
     }
 };
@@ -27,18 +27,17 @@ const reduces = handleActions(
         }),
         [LOGIN_SUCCESS]: (state, data) => ({
             ...state,
-            emailAddressValue: data.payload.email,
             submitRequest: {
                 ...state.submitRequest,
                 status: SUCCESS,
-                result: true
+                result: data
             }
         }),
         [LOGIN_FAILURE]: (state, action) => ({
             ...state,
             submitRequest: {
                 status: FAILURE,
-                result: false,
+                result: null,
                 error: action.payload
             }
         })
