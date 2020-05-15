@@ -19,8 +19,8 @@ const LoginPage = ({onSubmitRequest, loginSubmitRequestStatus}) => {
 
     const handleLoginClick = useCallback(() => {
         let loginObject = {
-            email: email,
-            password: password
+            email,
+            password
         }
         onSubmitRequest(loginObject)
     }, [onSubmitRequest, email, password]);
