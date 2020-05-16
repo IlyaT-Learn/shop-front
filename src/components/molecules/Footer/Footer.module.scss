@@ -1,5 +1,102 @@
 .footerContainer {
   width: 100%;
-  background-color: antiquewhite;
-  height: 80px;
+  background-color: #282c34;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  flex-wrap: wrap;
+  color: #9c9c9c;
+}
+
+.arrow {
+  border: solid #717171;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-right: 5px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+h3 {
+  color: white;
+}
+
+.sendButton {
+  border: solid #717171;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.verticalLine {
+  border-left: 2px solid #898989;
+}
+
+.sendButton:hover {
+  cursor: pointer;
+  border: solid #ff7002;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.sendUnit {
+  display: flex;
+  flex-direction: row;
+  background-color: white;
+  height: 35px;
+  width: 300px;
+  border-radius: 7px;
+  padding: 2px;
+  align-items: center;
+}
+
+.navButton {
+  display: flex;
+  align-items: center;
+}
+
+.navButton:hover {
+  color:white;
+}
+
+.textFiller{
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+.navButton p {
+  transition: 0.5s;
+  margin: 10px 0 10px 15px;
+}
+
+.navButton p:hover {
+  margin: 10px 0 10px 10px;
+  color: white;
+  transition: 0.5s;
+}
+
+input {
+  margin-right: 5px;
+  padding-left: 5px;
+  border-radius: 7px;
+  height: 33px;
+  width: 250px;
+  background-color: white;
+  border: solid white 0;
+  z-index: 2;
+  color: #9c9c9c;
+  outline: none;
+}
+
+.mainUnits {
+  display: flex;
+  flex-direction: column;
+  padding-left: 60px;
+  text-align: left;
 }
