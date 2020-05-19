@@ -2,6 +2,7 @@ import React from 'react';
 import ExampleContainer from '../container/ExmpleContainer';
 import LoginContainer from '../container/LoginContainer';
 import RegisterContainer from "../container/RegisterContainer";
+import ContactUsContainer from '../container/ContactUsContainer';
 
 const routes = [
   {
@@ -23,6 +24,10 @@ const routes = [
   {
     path: "/login",
     component: LoginContainer
+  },
+  {
+    path: "/contact_us",
+    component: ContactUsContainer
   }
 ];
 

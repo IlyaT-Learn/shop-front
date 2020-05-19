@@ -1,5 +1,5 @@
 import React, {useCallback, useState} from 'react';
-import {NavLink, useHistory} from 'react-router-dom';
+import {useHistory} from 'react-router-dom';
 import {TextField} from '@material-ui/core';
 import styles from '../LoginPage/LoginPage.module.scss';
 import {FAILURE} from '../../constants/request.constants';
@@ -21,13 +21,13 @@ const LoginPage = ({onSubmitRequest, loginSubmitRequestStatus}) => {
         let loginObject = {
             email,
             password
-        }
-        onSubmitRequest(loginObject)
+        };
+        onSubmitRequest(loginObject);
     }, [onSubmitRequest, email, password]);
 
     const handleContinueClick = useCallback(() => {
         history.push('/registration');
-    }, [history.push]);
+    }, [history]);
 
     return (
         <div className={styles.container}>

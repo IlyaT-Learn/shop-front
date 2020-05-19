@@ -12,6 +12,7 @@ import * as serviceWorker from "./serviceWorker";
 import exampleSaga from "./saga/example.saga";
 import loginSaga from "./saga/login.saga";
 import registerSaga from "./saga/register.saga";
+import contactUs from './saga/contactUs.saga';
 
 const store = initStore();
 const devTools = process.env.NODE_ENV === "development" ? <DevTools/> : null;
@@ -19,6 +20,7 @@ const devTools = process.env.NODE_ENV === "development" ? <DevTools/> : null;
 sagaMiddleware.run(exampleSaga);
 sagaMiddleware.run(loginSaga);
 sagaMiddleware.run(registerSaga);
+sagaMiddleware.run(contactUs);
 
 ReactDOM.render(
   <Provider store={store}>

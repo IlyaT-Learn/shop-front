@@ -1,13 +1,13 @@
 import {handleActions} from "redux-actions";
 import {
-    LOGIN_REQUEST,
-    LOGIN_SUCCESS,
-    LOGIN_FAILURE
-} from "../action/login.action";
+    CONTACT_REQUEST,
+    CONTACT_SUCCESS,
+    CONTACT_FAILURE
+} from "../action/contactUs.action";
 import {FAILURE, REQUEST, SUCCESS, UNCALLED} from "../constants/request.constants";
 
 const defaultState = {
-    submitRequest: {
+    contactRequest: {
         status: UNCALLED,
         result: null,
         error: null
@@ -16,25 +16,25 @@ const defaultState = {
 
 const reduces = handleActions(
     {
-        [LOGIN_REQUEST]: (state) => ({
+        [CONTACT_REQUEST]: (state) => ({
             ...state,
-            submitRequest: {
+            contactRequest: {
                 ...state.submitRequest,
                 status: REQUEST,
                 result: null
             }
         }),
-        [LOGIN_SUCCESS]: (state, data) => ({
+        [CONTACT_SUCCESS]: (state) => ({
             ...state,
-            submitRequest: {
+            contactRequest: {
                 ...state.submitRequest,
                 status: SUCCESS,
-                result: data
+                result: null
             }
         }),
-        [LOGIN_FAILURE]: (state, action) => ({
+        [CONTACT_FAILURE]: (state, action) => ({
             ...state,
-            submitRequest: {
+            contactRequest: {
                 status: FAILURE,
                 result: null,
                 error: action.payload

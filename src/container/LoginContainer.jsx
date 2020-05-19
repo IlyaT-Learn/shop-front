@@ -19,7 +19,7 @@ const LoginContainer = () => {
         if (loginSubmitRequestStatus === SUCCESS) {
             history.push('/main');
         }
-    },[loginSubmitRequestStatus]);
+    },[history, loginSubmitRequestStatus]);
 
     return (
         <LoginPage onSubmitRequest={handleFetchRequest}
