@@ -8,7 +8,19 @@
   color: #9c9c9c;
 }
 
+.lightArrow{
+  transition: .5s;
+  border: solid #ffffff;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-right: 5px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
 .arrow {
+  transition: .5s;
   border: solid #717171;
   border-width: 0 3px 3px 0;
   display: inline-block;
@@ -57,12 +69,9 @@ h3 {
 }
 
 .navButton {
+  cursor: pointer;
   display: flex;
   align-items: center;
-}
-
-.navButton:hover {
-  color:white;
 }
 
 .textFiller{
@@ -70,12 +79,13 @@ h3 {
   margin-bottom: 40px;
 }
 
-.navButton p {
+.nameOfNavButton {
   transition: 0.5s;
   margin: 10px 0 10px 15px;
+  color: #9c9c9c;
 }
 
-.navButton p:hover {
+.lightNameOfNavButton{
   margin: 10px 0 10px 10px;
   color: white;
   transition: 0.5s;

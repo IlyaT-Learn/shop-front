@@ -19,6 +19,7 @@
 }
 
 .logo{
+  cursor: pointer;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -44,6 +45,11 @@
   height: 50px;
   outline: none;
   width: 400px;
+}
+
+.registerButton:hover{
+  transition: .5s;
+  color: black;
 }
 
 .registerButton{
@@ -86,6 +92,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+a{
+  cursor: pointer;
 }
 
 .menu a{

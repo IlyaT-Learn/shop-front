@@ -1,5 +1,6 @@
 import React from "react";
 import styles from './Menu.module.scss'
+import Category from './Category'
 
 const Menu = () => {
 
@@ -10,46 +11,16 @@ const Menu = () => {
                 <p className={styles.line}/>
             </div>
             <div className={styles.unitWithCategories}>
-                <div>
-                    <img src="#"/>
-                    <a>Clothes & Footwear</a>
-                </div>
-                <div>
-                    <img src="#"/>
-                    <a>Kitchen Appiance</a>
-                </div>
-                <div>
-                    <img src="#"/>
-                    <a>New Arrivals</a>
-                </div>
-                <div>
-                    <img src="#"/>
-                    <a>Laptop & Computer</a>
-                </div>
-                <div>
-                    <img src="#"/>
-                    <a>Mobile & Cover</a>
-                </div>
-                <div>
-                    <img src="#"/>
-                    <a>Accessories</a>
-                </div>
-                <div>
-                    <img src="#"/>
-                    <a>Interior Design</a>
-                </div>
-                <div>
-                    <img src="#"/>
-                    <a>Game & Sports</a>
-                </div>
-                <div>
-                    <img src="#"/>
-                    <a>Furniture & Lighting</a>
-                </div>
-                <div>
-                    <img src="#"/>
-                    <a>More Categories</a>
-                </div>
+                <Category nameOfCategory={'Clothes & Footwear'}/>
+                <Category nameOfCategory={'Kitchen Appiance'}/>
+                <Category nameOfCategory={'New Arrivals'}/>
+                <Category nameOfCategory={'Laptop & Computer'}/>
+                <Category nameOfCategory={'Mobile & Cover'}/>
+                <Category nameOfCategory={'Accessories'}/>
+                <Category nameOfCategory={'Interior Design'}/>
+                <Category nameOfCategory={'Game & Sports'}/>
+                <Category nameOfCategory={'Furniture & Lighting'}/>
+                <Category nameOfCategory={'More Categories'}/>
             </div>
         </div>
     );
