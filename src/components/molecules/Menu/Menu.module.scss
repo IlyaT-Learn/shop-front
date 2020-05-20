@@ -1,6 +1,6 @@
 .menuContainer {
   margin-top: 50px;
-  height:475px;
+  height: 475px;
 }
 
 .unitWithCategories {
@@ -9,23 +9,6 @@
   padding-left: 20px;
   flex-direction: column;
   box-shadow: 0 0 2px 1px #9c9c9c;
-}
-
-.unitWithCategories div :hover {
-  color: #ff7200;
-  margin-top: 10px;
-  transition: 0.1s;
-  cursor: pointer;
-  margin-bottom: 10px;
-}
-
-.unitWithCategories div {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-img {
-  margin-right: 10px;
 }
 
 .mainUnit p {

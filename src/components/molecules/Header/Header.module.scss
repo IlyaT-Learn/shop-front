@@ -3,60 +3,14 @@
   height: 200px;
 }
 
-.invisibleUnit{
-    width: 200px;
-}
-
-.unitWithSearchField{
-
-}
-
-.unitWithMenu{
+.unitWithMenu {
   display: flex;
   background-color: #db5400;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.logo{
-  cursor: pointer;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.nameOfTheMarket{
-  font-size: 40px;
-  color:white;
-  margin:0;
-}
-
-.circle{
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  background-color: white;
-  margin-right: 5px;
-}
-
-.searchField{
-  background-color: white;
-  border: solid white 0;
-  height: 50px;
-  outline: none;
-  width: 400px;
-}
-
-.registerButton:hover{
-  transition: .5s;
-  color: black;
-}
-
-.registerButton{
-  color : white;
-}
-
-.searchButton{
+.searchButton {
   border: solid #717171;
   border-width: 0 3px 3px 0;
   display: inline-block;
@@ -67,18 +21,7 @@
   cursor: pointer;
 }
 
-.unitWithSearchField{
-  background-color: white;
-  border-radius: 7px;
-  padding-left: 20px;
-  padding-right: 5px;
-  width: 450px;
-  height: 55px;
-  align-items: center;
-  display: flex;
-}
-
-.searchUnit{
+.searchUnit {
   display: flex;
   background-color: #ff6100;
   height: 150px;
@@ -86,19 +29,10 @@
   justify-content: space-around;
 }
 
-.menu{
+.menu {
   height: 50px;
   width: 200px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-}
-
-a{
-  cursor: pointer;
-}
-
-.menu a{
-  color : white;
-  font-size: 15px;
 }

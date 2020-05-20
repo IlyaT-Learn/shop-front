@@ -1,41 +1,43 @@
-import React from "react";
+import React from 'react';
 import styles from './Footer.module.scss';
-import cn from 'classnames';
-import NavButton from "./NavButton";
-import SendUnit from "./SendUnit";
+import FNavLink from '../../atoms/FNavLink/FNavLink';
+import H3FLink from '../../atoms/H3FLink/H3FLink';
+import FMainUnit from '../../atoms/FMainUnits/FMainUnit';
+import SendButton from '../../atoms/SendButton/SendButton';
+import FTextFiller from "../../atoms/FTextFiller/FTextFiller";
 
-const Footer = () => {
-
-    return (
-        <div className={styles.footerContainer}>
-            <div className={styles.mainUnits}>
-                <h3>Information</h3>
-                <NavButton nameOfTheButton={'About Us'}/>
-                <NavButton nameOfTheButton={'Delivery Information'}/>
-                <NavButton nameOfTheButton={'Privacy Policy'}/>
+const Footer = () => (
+    <div className={styles.footerContainer}>
+        <FMainUnit>
+            <H3FLink>Information</H3FLink>
+            <FNavLink> About Us</FNavLink>
+            <FNavLink> Delivery Information</FNavLink>
+            <FNavLink> Privacy Policy</FNavLink>
+        </FMainUnit>
+        <FMainUnit className={styles.verticalLine}>
+            <H3FLink>My Account</H3FLink>
+            <FNavLink>My account</FNavLink>
+            <FNavLink>Order history</FNavLink>
+            <FNavLink>Newsletter</FNavLink>
+            <FNavLink>Returns</FNavLink>
+        </FMainUnit>
+        <FMainUnit className={styles.verticalLine}>
+            <H3FLink>Contact Information</H3FLink>
+            <FNavLink> Martech - Food Store United States</FNavLink>
+            <FNavLink> 000-000-0000</FNavLink>
+            <FNavLink> 123456</FNavLink>
+            <FNavLink>sales@yourcompany.com</FNavLink>
+        </FMainUnit>
+        <FMainUnit className={styles.verticalLine}>
+            <H3FLink>Join Our Mailing List</H3FLink>
+            <FTextFiller>There are many variations of <br/>
+                passages of Lorem ispum available</FTextFiller>
+            <div className={styles.sendUnit}>
+                <input className={styles.textField} placeholder="Enter Your Email Address"/>
+                <SendButton/>
             </div>
-            <div className={cn(styles.verticalLine, styles.mainUnits)}>
-                <h3>My Account</h3>
-                <NavButton nameOfTheButton={'My account'}/>
-                <NavButton nameOfTheButton={'Order history'}/>
-                <NavButton nameOfTheButton={'Newsletter'}/>
-                <NavButton nameOfTheButton={'Returns'}/>
-            </div>
-            <div className={cn(styles.verticalLine, styles.mainUnits)}>
-                <h3>Contact Information</h3>
-                <NavButton nameOfTheButton={'Martech - Food Store United States'}/>
-                <NavButton nameOfTheButton={'000-000-0000'}/>
-                <NavButton nameOfTheButton={'123456'}/>
-                <NavButton nameOfTheButton={'sales@yourcompany.com'}/>
-            </div>
-            <div className={cn(styles.verticalLine, styles.mainUnits)}>
-                <h3>Join Our Mailing List</h3>
-                <p className={styles.textFiller}>There are many variations of <br/>
-                passages of Lorem ispum available</p>
-                <SendUnit/>
-            </div>
-        </div>
-    );
-};
+        </FMainUnit>
+    </div>
+);
 
 export default Footer;

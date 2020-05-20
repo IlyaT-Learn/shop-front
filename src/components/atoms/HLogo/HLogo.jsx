@@ -1,5 +1,5 @@
-import styles from "./Header.module.scss";
-import React from "react";
+import styles from './Logo.module.scss';
+import React from 'react';
 
 const Logo = () => {
     return (

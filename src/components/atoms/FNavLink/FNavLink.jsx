@@ -1,7 +1,8 @@
 import React from 'react';
-import styles from "./Footer.module.scss";
+import styles from './FNavLink.module.scss';
+import cn from 'classnames';
 
-const NavButton = (props) => {
+const FNavLink = ({children,className}) =>{
     const highLightNavButton = (event) => {
         event.target.parentNode.firstChild.className = `${styles.lightArrow}`;
         event.target.parentNode.lastChild.className =`${styles.lightNameOfNavButton}`;
@@ -13,14 +14,14 @@ const NavButton = (props) => {
     }
 
     return (
-        <div className={styles.navButton}>
+        <div className={cn(styles.navButton , className)}>
             <i onMouseOut={(event) => lowLightNavButton(event)}
                onMouseOver={(event) => highLightNavButton(event)}
                className={styles.arrow}/>
             <p className={styles.nameOfNavButton} onMouseOut={(event) => lowLightNavButton(event)}
-               onMouseOver={(event) => highLightNavButton(event)}> {props.nameOfTheButton}</p>
+               onMouseOver={(event) => highLightNavButton(event)}>{children}</p>
         </div>
     )
 }
 
-export default NavButton;
+export default FNavLink;
