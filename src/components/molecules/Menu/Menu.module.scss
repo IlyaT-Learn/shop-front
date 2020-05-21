@@ -1,9 +1,9 @@
 .menuContainer {
-  margin-top: 50px;
-  height: 475px;
+  height: 100%;
 }
 
 .unitWithCategories {
+  height: calc(100% - 60px);
   text-align: left;
   display: flex;
   padding-left: 20px;
