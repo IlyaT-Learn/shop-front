@@ -3,6 +3,7 @@ import {
   EXAMPLE_ACTION_ASYNC_FAILURE,
   EXAMPLE_ACTION_ASYNC_SUCCESS
 } from "../action/example.action";
+import { REGISTER_FAILURE, REGISTER_SUCCESS } from "../action/register.action";
 
 function* handleRegisterRequest(action) {
   debugger
@@ -10,7 +11,7 @@ function* handleRegisterRequest(action) {
     const requestResult = yield fetch('http://localhost:8000/users/add', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json;charset=utf-8'
       },
       body:JSON.stringify({
         firstName: 'Илья',
@@ -20,11 +21,11 @@ function* handleRegisterRequest(action) {
         email: 'iluxa@supershop.by',
         phone: '+375293020327'
       })
-    });
-    yield put(EXAMPLE_ACTION_ASYNC_SUCCESS(new Date()));
+    }).json();
+    yield put(REGISTER_SUCCESS());
   } catch (e) {
     console.log(e.message);
-    yield put(EXAMPLE_ACTION_ASYNC_FAILURE(e.message));
+    yield put(REGISTER_FAILURE(e.message));
   }
 }
 

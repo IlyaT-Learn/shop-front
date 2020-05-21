@@ -22,6 +22,8 @@ const RegisterPage = ({ onRegisterClick, registerRequestLoaderShow }) => {
     }
   }, [password, passwordConfirmError, onRegisterClick]);
 
+  console.log(registerRequestLoaderShow);
+
   return (
     <div className={styles.container}>
       <Loader show={registerRequestLoaderShow}/>
