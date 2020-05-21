@@ -9,17 +9,14 @@ const ContactUs = ({ onSubmitRequest, submitRequestStatus }) => {
     const [email, setEmail] = useState('');
     const [enquiry, setEnquiry] = useState('');
 
-    const handleNameChange = useCallback((e) => {
-        setName(e.target.value);
-    }, [setName]);
+    const handleNameChange = useCallback((e) =>
+        setName(e.target.value), [setName]);
 
-    const handleEmailChange = useCallback((e) => {
-        setEmail(e.target.value);
-    }, [setEmail]);
+    const handleEmailChange = useCallback((e) =>
+        setEmail(e.target.value), [setEmail]);
 
-    const handleEnquiryChange = useCallback((e) => {
-        setEnquiry(e.target.value);
-    }, [setEnquiry]);
+    const handleEnquiryChange = useCallback((e) =>
+        setEnquiry(e.target.value), [setEnquiry]);
 
     const handleSubmitClick = useCallback(() => {
         const submitObject = {

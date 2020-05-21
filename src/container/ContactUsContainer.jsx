@@ -8,9 +8,8 @@ const ContactUsContainer = () => {
     const contactUsState = useSelector(({ contactUs }) => contactUs);
     const submitRequestStatus = contactUsState.contactRequest.status;
 
-    const handleContactSubmitRequest = useCallback((data) => {
-        dispatch(CONTACT_REQUEST(data));
-    }, [dispatch]);
+    const handleContactSubmitRequest = useCallback((data) =>
+        dispatch(CONTACT_REQUEST(data)), [dispatch]);
 
     return (
         <ContactUs
