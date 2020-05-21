@@ -17,9 +17,9 @@
   }
 
   .nameOfNavLink {
-    margin: 10px 0 10px 10px;
     color: white;
     transition: 0.5s;
+    padding: 0 0 0 10px;
   }
 }
 
@@ -36,7 +36,8 @@
 }
 
 .nameOfNavLink {
+  padding: 0 10px 0 0;
+  margin: 0;
   transition: 0.5s;
-  margin: 10px 0 10px 15px;
   color: #9c9c9c;
 }

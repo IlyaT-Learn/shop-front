@@ -1,12 +1,6 @@
-.menuContainer {
-  height: 100%;
-}
-
 .unitWithCategories {
-  height: calc(100% - 60px);
   text-align: left;
   display: flex;
-  padding-left: 20px;
   flex-direction: column;
   box-shadow: 0 0 2px 1px #9c9c9c;
 }
@@ -22,10 +16,8 @@
   width: 250px;
   display: flex;
   justify-content: space-between;
-  padding-left: 25px;
   height: 60px;
   align-items: center;
-  padding-right: 25px;
 }
 
 .line {

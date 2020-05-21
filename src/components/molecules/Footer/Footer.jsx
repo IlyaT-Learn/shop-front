@@ -23,9 +23,9 @@ const Footer = () => (
         </FMainUnit>
         <FMainUnit className={styles.verticalLine}>
             <H3FLink>Contact Information</H3FLink>
-            <FNavLink> Martech - Food Store United States</FNavLink>
-            <FNavLink> 000-000-0000</FNavLink>
-            <FNavLink> 123456</FNavLink>
+            <FNavLink>Martech - Food Store United States</FNavLink>
+            <FNavLink>000-000-0000</FNavLink>
+            <FNavLink>123456</FNavLink>
             <FNavLink>sales@yourcompany.com</FNavLink>
         </FMainUnit>
         <FMainUnit className={styles.verticalLine}>
