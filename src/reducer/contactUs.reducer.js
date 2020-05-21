@@ -9,7 +9,6 @@ import {FAILURE, REQUEST, SUCCESS, UNCALLED} from "../constants/request.constant
 const defaultState = {
     contactRequest: {
         status: UNCALLED,
-        result: null,
         error: null
     }
 };
@@ -20,23 +19,20 @@ const reduces = handleActions(
             ...state,
             contactRequest: {
                 ...state.submitRequest,
-                status: REQUEST,
-                result: null
+                status: REQUEST
             }
         }),
         [CONTACT_SUCCESS]: (state) => ({
             ...state,
             contactRequest: {
                 ...state.submitRequest,
-                status: SUCCESS,
-                result: null
+                status: SUCCESS
             }
         }),
         [CONTACT_FAILURE]: (state, action) => ({
             ...state,
             contactRequest: {
                 status: FAILURE,
-                result: null,
                 error: action.payload
             }
         })

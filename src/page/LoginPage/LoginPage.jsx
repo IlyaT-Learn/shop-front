@@ -1,10 +1,11 @@
-import React, {useCallback, useState} from 'react';
-import {useHistory} from 'react-router-dom';
-import {TextField} from '@material-ui/core';
+import React, { useCallback, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import { TextField } from '@material-ui/core';
 import styles from '../LoginPage/LoginPage.module.scss';
-import {FAILURE} from '../../constants/request.constants';
+import { FAILURE, REQUEST } from '../../constants/request.constants';
+import Loader from '../../components/atoms/Loader/Loader'
 
-const LoginPage = ({onSubmitRequest, loginSubmitRequestStatus}) => {
+const LoginPage = ({ onSubmitRequest, loginSubmitRequestStatus }) => {
     const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -22,6 +23,7 @@ const LoginPage = ({onSubmitRequest, loginSubmitRequestStatus}) => {
             email,
             password
         };
+
         onSubmitRequest(loginObject);
     }, [onSubmitRequest, email, password]);
 
@@ -53,7 +55,15 @@ const LoginPage = ({onSubmitRequest, loginSubmitRequestStatus}) => {
                     label="Password"
                     variant="outlined"
                 />
-                <button onClick={handleLoginClick}>LOGIN</button>
+                <div className={styles.loginButttonContainer}>
+                    <button
+                        onClick={handleLoginClick}
+                        disabled={loginSubmitRequestStatus === REQUEST}>LOGIN</button>
+                    <Loader
+                        show={loginSubmitRequestStatus === REQUEST}
+                        className={styles.loader} />
+                </div>
+
                 {loginSubmitRequestStatus === FAILURE ? <div className={styles.error}>Login Error!</div> : null}
             </div>
         </div>

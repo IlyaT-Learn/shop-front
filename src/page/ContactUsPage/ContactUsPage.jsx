@@ -1,7 +1,8 @@
 import React, { useCallback, useState } from 'react';
 import { TextField, TextareaAutosize, Button } from '@material-ui/core';
 import styles from '../ContactUsPage/ContactUsPage.module.scss';
-import { FAILURE } from '../../constants/request.constants';
+import { FAILURE, REQUEST } from '../../constants/request.constants';
+import Loader from '../../components/atoms/Loader/Loader'
 
 const ContactUs = ({ onSubmitRequest, submitRequestStatus }) => {
     const [name, setName] = useState('');
@@ -10,28 +11,23 @@ const ContactUs = ({ onSubmitRequest, submitRequestStatus }) => {
 
     const handleNameChange = useCallback((e) => {
         setName(e.target.value);
-    },
-        [setName]
-    );
+    }, [setName]);
 
     const handleEmailChange = useCallback((e) => {
         setEmail(e.target.value);
-    },
-        [setEmail]
-    );
+    }, [setEmail]);
 
     const handleEnquiryChange = useCallback((e) => {
         setEnquiry(e.target.value);
-    },
-        [setEnquiry]
-    );
+    }, [setEnquiry]);
 
     const handleSubmitClick = useCallback(() => {
-        let submitObject = {
+        const submitObject = {
             name,
             email,
             enquiry,
         };
+
         onSubmitRequest(submitObject);
     }, [onSubmitRequest, name, email, enquiry]);
 
@@ -62,15 +58,20 @@ const ContactUs = ({ onSubmitRequest, submitRequestStatus }) => {
             onChange={handleEmailChange} />
         <TextareaAutosize
             value={enquiry}
-            onChange={handleEnquiryChange} 
-            placeholder="Enquiry"/>
-        <div>
-            <Button variant='contained' onClick={handleSubmitClick}>SUBMIT</Button>
+            onChange={handleEnquiryChange}
+            placeholder="Enquiry" />
+        <div className={styles.submitButttonContainer}>
+            <Button
+                variant='contained'
+                onClick={handleSubmitClick}
+                disabled={submitRequestStatus === REQUEST}>SUBMIT</Button>
+            <Loader
+                show={submitRequestStatus === REQUEST}
+                className={styles.loader} />
         </div>
 
         {submitRequestStatus === FAILURE ? <div className={styles.error}>Submit Error!</div> : null}
     </div>);
 }
-
 
 export default ContactUs;
