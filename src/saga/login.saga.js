@@ -14,7 +14,7 @@ const loginRequest = async (data) => {
     });
     const user = await response.json();
     if (!user) {
-        throw 'User is empty!';
+        throw new Error('User is empty!');
     }
 
     return user;
