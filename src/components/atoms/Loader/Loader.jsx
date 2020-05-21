@@ -1,6 +1,6 @@
-import React from "react";
-import styles from "./Loader.module.scss";
-import cn from "classnames";
+import React from 'react';
+import styles from './Loader.module.scss';
+import cn from 'classnames';
 
 const Loader = ({ show }) => (
   <div className={cn(styles.loaderContainer, {

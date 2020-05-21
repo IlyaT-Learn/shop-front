@@ -1,5 +1,38 @@
 .headerContainer {
   width: 100%;
-  background-color: antiquewhite;
-  height: 80px;
+  height: 200px;
+}
+
+.unitWithMenu {
+  display: flex;
+  background-color: #db5400;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.searchButton {
+  border: solid #717171;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  margin-right: 5px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  cursor: pointer;
+}
+
+.searchUnit {
+  display: flex;
+  background-color: #ff6100;
+  height: 150px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.menu {
+  height: 50px;
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }

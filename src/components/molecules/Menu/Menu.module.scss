@@ -1,5 +1,36 @@
 .menuContainer {
-  width: 200px;
-  background-color: #61dafb;
-  height: 100%;
+  margin-top: 50px;
+  height: 475px;
+}
+
+.unitWithCategories {
+  text-align: left;
+  display: flex;
+  padding-left: 20px;
+  flex-direction: column;
+  box-shadow: 0 0 2px 1px #9c9c9c;
+}
+
+.mainUnit p {
+  color: white;
+  margin: 0;
+}
+
+.mainUnit {
+  background-color: black;
+  border-radius: 5px 5px 0 0;
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 25px;
+  height: 60px;
+  align-items: center;
+  padding-right: 25px;
+}
+
+.line {
+  border-bottom: 10px double #ffffff;
+  border-top: 3px solid #ffffff;
+  height: 5px;
+  width: 20px;
 }

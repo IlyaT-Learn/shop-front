@@ -1,0 +1,18 @@
+.searchField {
+  background-color: white;
+  border: solid white 0;
+  height: 50px;
+  outline: none;
+  width: 400px;
+}
+
+.unitWithSearchField {
+  background-color: white;
+  border-radius: 7px;
+  padding-left: 20px;
+  padding-right: 5px;
+  width: 450px;
+  height: 55px;
+  align-items: center;
+  display: flex;
+}
