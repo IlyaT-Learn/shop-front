@@ -3,7 +3,7 @@ import styles from './Menu.module.scss'
 import Category from '../../atoms/MCategory/Category';
 
 const Menu = () => (
-    <div className={styles.menuContainer}>
+    <div>
         <div className={styles.mainUnit}>
             <p>All Categories</p>
             <p className={styles.line}/>

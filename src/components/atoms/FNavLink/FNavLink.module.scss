@@ -2,6 +2,7 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  margin-top:25px;
 }
 
 .navLink:hover {
@@ -19,10 +20,9 @@
   .nameOfNavLink {
     color: white;
     transition: 0.5s;
-    padding: 0 0 0 10px;
+    padding: 0 5px 0 10px;
   }
 }
-
 
 .arrow {
   transition: .5s;
@@ -36,7 +36,7 @@
 }
 
 .nameOfNavLink {
-  padding: 0 10px 0 0;
+  padding: 0 0 0 15px;
   margin: 0;
   transition: 0.5s;
   color: #9c9c9c;
