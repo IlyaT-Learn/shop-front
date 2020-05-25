@@ -1,8 +1,14 @@
+.menuContainer{
+  box-shadow: 0 0 2px 1px #9c9c9c;
+  border-radius: 5px;
+  margin:10px;
+}
+
 .unitWithCategories {
   text-align: left;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 0 2px 1px #9c9c9c;
+  border-radius: 0 0 5px 5px;
 }
 
 .mainUnit p {
@@ -11,6 +17,8 @@
 }
 
 .mainUnit {
+  padding-left: 20px;
+  padding-right: 20px;
   background-color: black;
   border-radius: 5px 5px 0 0;
   width: 250px;

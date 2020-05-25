@@ -1,5 +1,9 @@
-.fMainUnit {
-  display: flex;
-  flex-direction: column;
+.container {
   text-align: left;
+}
+
+.fMainUnit {
+  display:flex;
+  justify-content: center;
+  flex:1;
 }

@@ -2,41 +2,30 @@
   cursor: pointer;
   display: flex;
   align-items: center;
+  margin-top:25px;
 }
 
 .navLink:hover {
-  .arrow {
+  .arrowColor {
     transition: .5s;
     border: solid #ffffff;
     border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-    margin-right: 5px;
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
   }
 
   .nameOfNavLink {
     color: white;
     transition: 0.5s;
-    padding: 0 0 0 10px;
+    padding: 0 5px 0 10px;
   }
 }
 
-
-.arrow {
+.arrowColor {
   transition: .5s;
   border: solid #717171;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-  margin-right: 5px;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
 }
 
 .nameOfNavLink {
-  padding: 0 10px 0 0;
+  padding: 0 0 0 15px;
   margin: 0;
   transition: 0.5s;
   color: #9c9c9c;
