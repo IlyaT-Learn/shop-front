@@ -4,7 +4,7 @@ import cn from 'classnames';
 
 const FMainUnit = ({children, className}) => (
     <div className={cn(styles.fMainUnit, className)}>
-        <div  className={styles.container}>
+        <div className={styles.container}>
             {children}
         </div>
     </div>

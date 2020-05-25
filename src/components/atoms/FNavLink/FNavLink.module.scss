@@ -6,15 +6,10 @@
 }
 
 .navLink:hover {
-  .arrow {
+  .arrowColor {
     transition: .5s;
     border: solid #ffffff;
     border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 3px;
-    margin-right: 5px;
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
   }
 
   .nameOfNavLink {
@@ -24,15 +19,9 @@
   }
 }
 
-.arrow {
+.arrowColor {
   transition: .5s;
   border: solid #717171;
-  border-width: 0 3px 3px 0;
-  display: inline-block;
-  padding: 3px;
-  margin-right: 5px;
-  transform: rotate(-45deg);
-  -webkit-transform: rotate(-45deg);
 }
 
 .nameOfNavLink {

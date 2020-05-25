@@ -4,7 +4,7 @@ import Arrow from "../Arrow/Arrow";
 
 const Category = ({children}) => (
     <div className={styles.Category}>
-        <Arrow className={styles.arrow}/>
+        <Arrow className={styles.arrowColor}/>
         <a className={styles.categoryName}>{children}</a>
     </div>
 );
