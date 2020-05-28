@@ -4,7 +4,7 @@ import routes from "./routes";
 import appHistory from "./history";
 import Header from "../components/molecules/Header/Header";
 import Footer from "../components/molecules/Footer/Footer";
-import Menu from "../components/molecules/Menu/Menu";
+import MenuContainer from "../container/MenuContainer";
 import styles from './AppRouter.module.scss';
 
 const AppRouter = () => {
@@ -14,7 +14,7 @@ const AppRouter = () => {
       <Router history={appHistory}>
         <Header/>
         <div className={styles.appContainer}>
-          <Menu />
+          <MenuContainer/>
           <div className={styles.pageContainer}>
               <Switch>
                 {routes.map(route => (
