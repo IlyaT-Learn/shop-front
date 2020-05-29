@@ -1,10 +1,6 @@
-import {handleActions} from "redux-actions";
-import {
-    LOGIN_REQUEST,
-    LOGIN_SUCCESS,
-    LOGIN_FAILURE
-} from "../action/login.action";
-import {FAILURE, REQUEST, SUCCESS, UNCALLED} from "../constants/request.constants";
+import {handleActions} from 'redux-actions';
+import {LOGIN_REQUEST, LOGIN_SUCCESS, LOGIN_FAILURE} from '../action/login.action';
+import {FAILURE, REQUEST, SUCCESS, UNCALLED} from '../constants/request.constants';
 
 const defaultState = {
     submitRequest: {
