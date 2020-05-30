@@ -1,31 +1,32 @@
-.categoryName {
-  cursor: pointer;
-  transition: .2s;
-  margin-left: 7px;
-}
-
 .Category {
+  cursor: pointer;
   display: flex;
-  align-items: center;
-  margin: 10px;
+  margin: 15px 5px;
+  font-size: 20px;
+  font-style: italic;
 }
 
-.Category:hover {
-  .categoryName {
-    color: #ff7200;
-    transition: .2s;
-    margin-left: 7px;
-  }
-
-  .arrowColor {
-    transition: .2s;
-    border: solid #ff7200;
-    border-width: 0 3px 3px 0;
-  }
+.categoryName {
+  margin-left: 10px;
+  transition: margin-left 1s;
 }
 
 .arrowColor {
-  transition: .2s;
-  border: solid #000000;
+  border: solid #000;
   border-width: 0 3px 3px 0;
+  margin-left: 10px;
+  transition: border-bottom-width .2s, border-right-width .2s, transform .2s;
+}
+
+.Category:hover {
+
+  .categoryName {
+    color: #ff7200;
+    margin-left: 120px;
+  }
+
+  .arrowColor {
+    border: 5px solid #ff7200;
+    transform: scale(1.3);
+  }
 }

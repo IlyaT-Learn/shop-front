@@ -5,7 +5,7 @@ const Logo = () => {
     return (
         <div className={styles.logo}>
             <div className={styles.circle}/>
-            <p className={styles.nameOfTheMarket}><strong>m</strong>artech</p>
+            <p className={styles.nameOfTheMarket}>...<strong>i</strong>Market...</p>
         </div>
     );
 }

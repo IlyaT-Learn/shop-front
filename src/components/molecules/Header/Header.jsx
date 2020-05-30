@@ -8,11 +8,10 @@ import HRegisterOrSignInButton from '../../atoms/HRegisterOrSignInButton/HRegist
 const Header = () => (
     <div className={styles.headerContainer}>
         <div className={styles.unitWithMenu}>
-            <div/>
             <div className={styles.menu}>
-                <HNavButton>Contact</HNavButton>
-                <HNavButton> Affiliate </HNavButton>
-                <HNavButton>Blogs</HNavButton>
+                <HNavButton>Контакты</HNavButton>
+                <HNavButton>Филиалы</HNavButton>
+                <HNavButton>Блог</HNavButton>
             </div>
         </div>
         <div className={styles.searchUnit}>

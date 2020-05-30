@@ -1,9 +1,10 @@
 .circle {
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-color: white;
   margin-right: 5px;
+  transition: background-color 1s, transform 1s, border-radius .5s;
 }
 
 .logo {
@@ -17,4 +18,11 @@
   font-size: 40px;
   color: white;
   margin: 0;
+}
+
+.circle:hover {
+  background-color: black;
+  transform: scale(1.5) rotate(45rad);
+
+  border-radius: 20%;
 }

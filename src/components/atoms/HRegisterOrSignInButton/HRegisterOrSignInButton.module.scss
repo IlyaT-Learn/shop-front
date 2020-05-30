@@ -1,8 +1,16 @@
-.registerButton {
-  color: white;
-  cursor: pointer;
+.regAndLoginContainer {
+  display: flex;
+  align-items: center;
 }
 
-.registerButton:hover {
+.HButton {
+  cursor: pointer;
+  margin: 0 10px;
+  color: white;
+  transition: transform .5s, color 1s;
+}
+
+.HButton:hover {
   color: black;
+  transform: scale(1.2);
 }
