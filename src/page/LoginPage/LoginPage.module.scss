@@ -1,12 +1,14 @@
 .container {
   display: flex;
+  height: 100%;
 }
 
-.firstBlock, .secondBlock {
+.pageBlock {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
+  padding: 30px;
   width: 50%;
 }
 
@@ -14,10 +16,16 @@
   color: red;
 }
 
-.loginButttonContainer{
-  position: relative;
-}
-
 .loader {
   margin-left: 75px;
+}
+
+.verticalLine {
+  width: 20px;
+  background: linear-gradient(#ff6100, #282c34);
+  margin: 0 20px;
+}
+
+.textFieldMargin {
+  margin: 10px 0;
 }
