@@ -1,5 +1,12 @@
 .navButton{
   cursor: pointer;
   color: white;
+  font-style: oblique;
   font-size: 15px;
+  transition: transform .2s;
+}
+
+.navButton:hover {
+  color: black;
+  transform: scale(1.3);
 }
