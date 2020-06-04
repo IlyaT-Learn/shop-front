@@ -1,21 +1,19 @@
-import React, {useCallback} from 'react';
+import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {MENU_REQUEST} from '../action/menu.action'
-import Menu from "../components/molecules/Menu/Menu";
-import {SUCCESS} from '../constants/request.constants';
+import Menu from '../components/molecules/Menu/Menu';
 
 const MenuContainer = () => {
     const dispatch = useDispatch();
     const menuState = useSelector(({menu}) => menu);
-    const menuSubmitRequest = menuState.menuRequest;
+    const menuRequest = menuState.menuRequest;
 
-    const handleFetchRequest = useCallback((data) => {
+    useEffect((data) => {
         dispatch(MENU_REQUEST(data));
     }, [dispatch]);
 
     return (
-        <Menu getListOfCategories={handleFetchRequest}
-              menuSubmitRequest={menuSubmitRequest}/>
+        <Menu menuRequest={menuRequest}/>
     );
 }
 

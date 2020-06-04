@@ -3,7 +3,7 @@ import {useHistory} from 'react-router-dom';
 import {TextField} from '@material-ui/core';
 import styles from '../LoginPage/LoginPage.module.scss';
 import {FAILURE, REQUEST} from '../../constants/request.constants';
-import Loader from '../../components/atoms/Loader/Loader'
+import Loader from '../../components/atoms/Loader/Loader';
 import Button from '@material-ui/core/Button';
 
 const LoginPage = ({onSubmitRequest, loginSubmitRequestStatus}) => {
@@ -29,7 +29,7 @@ const LoginPage = ({onSubmitRequest, loginSubmitRequestStatus}) => {
     }, [onSubmitRequest, email, password]);
 
     const handleContinueClick = useCallback(() => {
-        history.push('/registration');
+        history.push('/register');
     }, [history]);
 
     return (
@@ -39,7 +39,12 @@ const LoginPage = ({onSubmitRequest, loginSubmitRequestStatus}) => {
                 <h3>Зарегистрировать аккаунт</h3>
                 <p>Создав аккаунт, вы сможете делать покупки быстрее, быть в курсе статуса заказа и
                     отслеживать заказы, которые вы сделали ранее.</p>
-                <Button variant="contained" color="secondary" onClick={handleContinueClick}>
+                <Button
+                    variant="contained"
+                    color="secondary"
+                    onClick={handleContinueClick}
+                    disabled={loginSubmitRequestStatus === REQUEST}
+                >
                     Продолжить
                 </Button>
             </div>
@@ -71,11 +76,7 @@ const LoginPage = ({onSubmitRequest, loginSubmitRequestStatus}) => {
                         onClick={handleLoginClick}>
                         Войти
                     </Button>
-                    <Loader
-                        show={loginSubmitRequestStatus === REQUEST}
-                        className={styles.loader}/>
                 </div>
-
                 {loginSubmitRequestStatus === FAILURE ? <div className={styles.error}>Login Error!</div> : null}
             </div>
         </div>

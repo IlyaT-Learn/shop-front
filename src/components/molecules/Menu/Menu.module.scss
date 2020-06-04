@@ -1,15 +1,16 @@
 .menuContainer{
-  box-shadow: 0 0 2px 1px #9c9c9c;
-  border-radius: 5px;
-  margin: 50px 20px;
+  margin: 20px;
+  height: auto;
 }
 
 .unitWithCategories {
   text-align: left;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 10px 10px 5px #9c9c9c;
   border-radius: 0 0 5px 5px;
 }
+
 
 .mainUnit p {
   color: white;
@@ -17,20 +18,13 @@
 }
 
 .mainUnit {
-  padding-left: 20px;
-  padding-right: 20px;
+  padding: 10px 20px;
   background-color: black;
-  border-radius: 5px 5px 0 0;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -5px 5px 5px #9c9c9c;
   width: 250px;
   display: flex;
   justify-content: space-between;
   height: 60px;
   align-items: center;
-}
-
-.line {
-  border-bottom: 10px double #ffffff;
-  border-top: 3px solid #ffffff;
-  height: 5px;
-  width: 20px;
 }

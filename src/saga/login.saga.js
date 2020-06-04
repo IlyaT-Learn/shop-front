@@ -1,8 +1,5 @@
 import {takeEvery, select, put, all} from 'redux-saga/effects';
-import {
-    LOGIN_SUCCESS,
-    LOGIN_FAILURE
-} from '../action/login.action';
+import {LOGIN_SUCCESS, LOGIN_FAILURE} from '../action/login.action';
 
 const loginRequest = async (data) => {
     const response = await fetch('http://127.0.0.1:8000/Users/login', {
@@ -12,6 +9,7 @@ const loginRequest = async (data) => {
         },
         body: JSON.stringify(data)
     });
+
     const user = await response.json();
     if (!user) {
         throw new Error('User is empty!');
@@ -31,7 +29,7 @@ function* onLoadLogin({payload}) {
 
 function* loginSaga() {
     yield all([
-        takeEvery("LOGIN_REQUEST", onLoadLogin)
+        takeEvery('LOGIN_REQUEST', onLoadLogin)
     ]);
 }
 

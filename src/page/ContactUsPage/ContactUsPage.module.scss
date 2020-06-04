@@ -1,14 +1,43 @@
 .container {
     display: flex;
     flex-direction: column;
+    padding: 50px;
+}
+
+.containerInfo {
+    display: flex;
+    flex-direction: column;
+    border: black 5px solid;
+    border-radius: 40px;
+    margin-bottom: 40px;
+}
+
+.infoBlock {
+    width: max-content;
+    margin: 10px auto;
+}
+
+.infoBlock img {
+    margin: 10px auto;
+}
+
+.infoBlock h5 {
+    margin: 0;
+    font-style: oblique;
+    font-weight: normal;
+}
+
+.margin_field {
+    margin: 10px 0;
+    width: 100%;
 }
 
 .error {
     color: red;
 }
 
-.submitButttonContainer{
-    position: relative;
+.submitButtonContainer{
+    margin: 20px 0;
 }
 
 .loader {

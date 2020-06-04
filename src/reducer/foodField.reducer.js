@@ -1,38 +1,38 @@
 import {handleActions} from 'redux-actions';
-import {MENU_REQUEST, MENU_SUCCESS, MENU_FAILURE} from '../action/menu.action';
+import {FOOD_FIELD_REQUEST, FOOD_FIELD_SUCCESS, FOOD_FIELD_FAILURE} from '../action/foodField.action';
 import {FAILURE, REQUEST, SUCCESS, UNCALLED} from '../constants/request.constants';
 
 const defaultState = {
-    menuRequest: {
+    fooFieldRequest: {
         status: UNCALLED,
-        categories: null,
+        products: null,
         error: null
     }
 };
 
 const reduces = handleActions(
     {
-        [MENU_REQUEST]: (state) => ({
+        [FOOD_FIELD_REQUEST]: (state) => ({
             ...state,
-            menuRequest: {
-                ...state.menuRequest,
+            foodFieldRequest: {
+                ...state.foodFieldRequest,
                 status: REQUEST,
-                categories: null
+                products: null
             }
         }),
-        [MENU_SUCCESS]: (state, action) => ({
+        [FOOD_FIELD_SUCCESS]: (state, data) => ({
             ...state,
-            menuRequest: {
-                ...state.menuRequest,
+            fooFieldRequest: {
+                ...state.foodFieldRequest,
                 status: SUCCESS,
-                categories: action.payload
+                products: data
             }
         }),
-        [MENU_FAILURE]: (state, action) => ({
+        [FOOD_FIELD_FAILURE]: (state, action) => ({
             ...state,
-            menuRequest: {
+            foodFieldRequest: {
                 status: FAILURE,
-                categories: null,
+                products: null,
                 error: action.payload
             }
         })

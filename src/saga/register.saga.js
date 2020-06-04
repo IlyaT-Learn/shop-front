@@ -1,9 +1,7 @@
 import {takeEvery, put, all} from 'redux-saga/effects';
-import {EXAMPLE_ACTION_ASYNC_FAILURE, EXAMPLE_ACTION_ASYNC_SUCCESS} from '../action/example.action';
 import {REGISTER_FAILURE, REGISTER_SUCCESS} from '../action/register.action';
 
 function* handleRegisterRequest(action) {
-    debugger
     try {
         const requestResult = yield fetch('http://localhost:8000/users/add', {
             method: 'POST',

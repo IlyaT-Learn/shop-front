@@ -5,6 +5,7 @@ import login from './login.reducer';
 import register from './register.reducer';
 import contactUs from './contactUs.reducer'
 import menu from './menu.reducer';
+import products from './foodField.reducer';
 
 const rootReducer = (history) =>
     combineReducers({
@@ -13,7 +14,8 @@ const rootReducer = (history) =>
         login,
         register,
         contactUs,
-        menu
+        menu,
+        products
     });
 
 export default rootReducer;

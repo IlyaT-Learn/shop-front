@@ -19,7 +19,6 @@ const composedMiddlewares = () =>
     : compose(applyMiddleware(...defaultMiddlewares));
 
 const initialize = (initialState) => {
-      console.log(initialState);
       return createStore(reducer(history), initialState, composedMiddlewares());
 };
 
