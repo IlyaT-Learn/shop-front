@@ -1,7 +1,7 @@
 import {all, takeEvery} from 'redux-saga/effects';
-import {FOOD_FIELD_REQUEST} from '../action/foodField.action';
+import {PRODUCTS_REQUEST} from '../action/products.action';
 
-const foodFieldRequest = async (action) => {
+const productsRequest = async (action) => {
 
     return (await fetch('http://127.0.0.1:8000/Categories/getProductsOfCategory', {
         method: 'POST',
@@ -18,10 +18,10 @@ const foodFieldRequest = async (action) => {
     })).json();
 };
 
-function* foodFieldSaga() {
+function* productsSaga() {
     yield all([
-        takeEvery('FOOD_FIELD_REQUEST', foodFieldRequest)
+        takeEvery('PRODUCTS_REQUEST', productsRequest)
     ]);
 }
 
-export default foodFieldSaga;
+export default productsSaga;

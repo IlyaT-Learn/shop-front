@@ -5,7 +5,7 @@ import login from './login.reducer';
 import register from './register.reducer';
 import contactUs from './contactUs.reducer'
 import menu from './menu.reducer';
-import products from './foodField.reducer';
+import products from './products.reducer';
 
 const rootReducer = (history) =>
     combineReducers({

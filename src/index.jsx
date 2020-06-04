@@ -14,7 +14,7 @@ import loginSaga from './saga/login.saga';
 import registerSaga from './saga/register.saga';
 import contactUs from './saga/contactUs.saga';
 import menuSaga from './saga/menu.saga';
-import foodFieldSaga from './saga/foodField.saga';
+import productsSaga from './saga/products.saga';
 
 const store = initStore();
 const devTools = process.env.NODE_ENV === 'development' ? <DevTools/> : null;
@@ -24,7 +24,7 @@ sagaMiddleware.run(loginSaga);
 sagaMiddleware.run(registerSaga);
 sagaMiddleware.run(contactUs);
 sagaMiddleware.run(menuSaga);
-sagaMiddleware.run(foodFieldSaga);
+sagaMiddleware.run(productsSaga);
 
 ReactDOM.render(
     <Provider store={store}>

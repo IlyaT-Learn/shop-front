@@ -3,7 +3,7 @@ import ExampleContainer from '../container/ExmpleContainer';
 import LoginContainer from '../container/LoginContainer';
 import RegisterContainer from '../container/RegisterContainer';
 import ContactUsContainer from '../container/ContactUsContainer';
-import FoodField from '../container/FoodFieldContainer';
+import Products from '../container/ProductsContainer';
 
 const routes = [
     {
@@ -30,8 +30,8 @@ const routes = [
         path: '/contact_us',
         component: ContactUsContainer
     }, {
-        path: '/foodField/:id',
-        component: FoodField
+        path: '/products/:id',
+        component: Products
     }
 ];
 

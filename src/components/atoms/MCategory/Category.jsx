@@ -6,7 +6,7 @@ import {useHistory} from 'react-router';
 const Category = ({data: {name, id}}) => {
     const history = useHistory();
 
-    const handleCategoryClick = useCallback(() => history.push(`/foodField/${id}`), [history, id]);
+    const handleCategoryClick = useCallback(() => history.push(`/products/${id}`), [history, id]);
 
     return (
         <div className={styles.Category} onClick={handleCategoryClick}>
