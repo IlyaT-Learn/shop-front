@@ -1,4 +1,4 @@
-import {takeEvery, select, put, all} from 'redux-saga/effects';
+import {takeEvery, put, all} from 'redux-saga/effects';
 import {LOGIN_SUCCESS, LOGIN_FAILURE} from '../action/login.action';
 
 const loginRequest = async (data) => {
@@ -21,6 +21,7 @@ const loginRequest = async (data) => {
 function* onLoadLogin({payload}) {
     try {
         const user = yield loginRequest(payload);
+
         yield put(LOGIN_SUCCESS(user));
     } catch (e) {
         yield put(LOGIN_FAILURE(e.message));

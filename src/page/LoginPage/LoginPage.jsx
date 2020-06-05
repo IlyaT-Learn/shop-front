@@ -3,7 +3,6 @@ import {useHistory} from 'react-router-dom';
 import {TextField} from '@material-ui/core';
 import styles from '../LoginPage/LoginPage.module.scss';
 import {FAILURE, REQUEST} from '../../constants/request.constants';
-import Loader from '../../components/atoms/Loader/Loader';
 import Button from '@material-ui/core/Button';
 
 const LoginPage = ({onSubmitRequest, loginSubmitRequestStatus}) => {

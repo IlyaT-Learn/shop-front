@@ -1,5 +1,5 @@
-import {takeEvery, select, put, all} from 'redux-saga/effects';
-import {MENU_SUCCESS, MENU_FAILURE, MENU_REQUEST} from '../action/menu.action';
+import {takeEvery, put, all} from 'redux-saga/effects';
+import {MENU_SUCCESS, MENU_FAILURE} from '../action/menu.action';
 
 const menuRequest = async () => {
     const response = await fetch('http://127.0.0.1:8000/Categories/', {
@@ -18,7 +18,7 @@ const menuRequest = async () => {
     return categories;
 };
 
-function* onLoadMenu({payload}) {
+function* loadMenu({payload}) {
     try {
         const categories = yield menuRequest(payload);
         yield put(MENU_SUCCESS(categories));
@@ -29,7 +29,7 @@ function* onLoadMenu({payload}) {
 
 function* menuSaga() {
     yield all([
-        takeEvery('MENU_REQUEST', onLoadMenu)
+        takeEvery('MENU_REQUEST', loadMenu)
     ]);
 }
 

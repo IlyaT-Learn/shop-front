@@ -9,7 +9,7 @@ const ProductsContainer = () => {
     const productsState = useSelector(({products}) => products);
     const productsRequest = productsState.productsRequest;
     const {match: {params: {id}}} = useReactRouter();
-
+    
     useEffect(() => {
         dispatch(PRODUCTS_REQUEST(id));
     }, [dispatch, id]);

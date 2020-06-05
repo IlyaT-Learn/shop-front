@@ -42,9 +42,7 @@ const RegisterPage = ({onRegisterClick, registerRequestLoaderShow}) => {
             <Loader show={registerRequestLoaderShow}/>
             <div>
                 <p>Если у вас уже есть учетная запись, пожалуйста, войдите на страницу входа.</p>
-
                 <h2>Ваши личные данные</h2>
-
                 <div className={styles.field}>
                     <TextField
                         value={firstName}

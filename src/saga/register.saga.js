@@ -3,7 +3,7 @@ import {REGISTER_FAILURE, REGISTER_SUCCESS} from '../action/register.action';
 
 function* handleRegisterRequest(action) {
     try {
-        const requestResult = yield fetch('http://localhost:8000/users/add', {
+        yield fetch('http://localhost:8000/users/add', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json;charset=utf-8'
@@ -20,7 +20,6 @@ function* handleRegisterRequest(action) {
         }).json();
         yield put(REGISTER_SUCCESS());
     } catch (e) {
-        console.log(e.message);
         yield put(REGISTER_FAILURE(e.message));
     }
 }

@@ -1,12 +1,17 @@
 import React from 'react';
 import styles from './ProductsPage.module.scss';
-import Loader from '../../components/atoms/Loader/Loader';
+import {SUCCESS} from '../../constants/request.constants';
+import Product from '../../components/molecules/Product/Product';
 
-const ProductsPage = ({}) => {
+const ProductsPage = ({productsRequest}) => {
 
     return (
         <div className={styles.container}>
-            Здарова
+            {productsRequest.status === SUCCESS
+                ?
+                productsRequest.products.rows.map((item, iter) => (<Product productDescription={item} key={iter}/>))
+                :
+                null}
         </div>
     );
 };

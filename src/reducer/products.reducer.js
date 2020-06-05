@@ -20,12 +20,12 @@ const reduces = handleActions(
                 products: null
             }
         }),
-        [PRODUCTS_SUCCESS]: (state, data) => ({
+        [PRODUCTS_SUCCESS]: (state, action) => ({
             ...state,
             productsRequest: {
                 ...state.productsRequest,
                 status: SUCCESS,
-                products: data
+                products: action.payload.allProductsOfCategory
             }
         }),
         [PRODUCTS_FAILURE]: (state, action) => ({
