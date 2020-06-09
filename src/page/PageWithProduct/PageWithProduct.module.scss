@@ -135,19 +135,33 @@ html {
   width: 50%;
 }
 
-.descriptionButton {
-  transition: 0.4s;
+.sectionButton {
   color: black;
   text-decoration: none;
   font-size: 24px;
   margin-left: 15px;
 }
 
+.sectionButton:hover {
+  transition: 0.4s;
+  color: #db5400;
+}
+
+.selectedSectionButton {
+  color: #db5400;
+  text-decoration: none;
+  font-size: 24px;
+  margin-left: 15px;
+}
+
+.invisibleUnit {
+  display: none;
+}
+
 .reviews {
   border: 2px solid rgba(189, 189, 189, 0.85);
   border-radius: 4px;
   padding: 20px;
-  display:none;
 }
 
 .writeReviewField {
@@ -161,22 +175,10 @@ html {
   font-size: 24px;
 }
 
-.descriptionButton:hover {
-  transition: 0.4s;
-  color: #db5400;
-}
 
 .writeReviewText {
   font-weight: bold;
   font-size: 25px;
-}
-
-.reviewsButton {
-  transition: 0.4s;
-  font-size: 24px;
-  color: black;
-  text-decoration: none;
-  margin-left: 25px ;
 }
 
 .reviewsAnchor {
@@ -192,12 +194,6 @@ html {
   padding: 20px;
   border: 2px solid rgba(189, 189, 189, 0.85);
   border-radius: 4px;
-}
-
-.reviewsButton:hover {
-  transition: 0.4s;
-  color: #db5400;
-  text-decoration: none;
 }
 
 .writeAssessmentField {
