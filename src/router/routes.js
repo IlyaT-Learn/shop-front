@@ -4,6 +4,7 @@ import LoginContainer from '../container/LoginContainer';
 import RegisterContainer from '../container/RegisterContainer';
 import ContactUsContainer from '../container/ContactUsContainer';
 import FoodField from '../container/FoodFieldContainer';
+import PageWithProductContainer from '../container/PageWithProductContainer';
 
 const routes = [
     {
@@ -32,6 +33,9 @@ const routes = [
     }, {
         path: '/foodField/:id',
         component: FoodField
+    }, {
+        path: '/pageWithProduct',
+        component: PageWithProductContainer
     }
 ];
 
