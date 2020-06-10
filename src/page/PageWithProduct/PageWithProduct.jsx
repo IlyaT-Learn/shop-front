@@ -1,10 +1,13 @@
-import React, {useState} from 'react';
+import React, {useCallback, useState} from 'react';
 import styles from './PageWithProduct.module.scss';
 import cn from 'classnames';
 
 const PageWithProduct = () => {
-
     const [status, changeStatus] = useState(false);
+
+    const openSection = useCallback((newStatus) => {
+        changeStatus(newStatus)
+    });
 
     return (
         <div className={styles.pageContainer}>
@@ -40,27 +43,27 @@ const PageWithProduct = () => {
                 </div>
             </div>
             <div className={styles.descriptionOfProduct}>
-                <div>
-                    <a onClick={() => changeStatus(false)}
+                <div className={styles.unitWithSectionButtons}>
+                    <p onClick={() => openSection(false)}
                        className={cn({
                            [styles.selectedSectionButton]: !status,
                            [styles.sectionButton]: status
-                       })}>Описание</a>
-                    <a className={cn({
+                       })}>Описание</p>
+                    <p className={cn({
                         [styles.selectedSectionButton]: status,
                         [styles.sectionButton]: !status
                     })}
-                       onClick={() => changeStatus(true)}>Отзывы(1)</a>
+                       onClick={() => openSection(true)}>Отзывы(1)</p>
                 </div>
                 <div className={cn({
                     [styles.description]: !status,
                     [styles.invisibleUnit]: status
                 })}>
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                     eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
                     exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
                     reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                 </div>
                 <div id="reviews" className={cn({
                     [styles.invisibleUnit]: !status,

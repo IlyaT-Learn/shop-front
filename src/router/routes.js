@@ -4,7 +4,7 @@ import LoginContainer from '../container/LoginContainer';
 import RegisterContainer from '../container/RegisterContainer';
 import ContactUsContainer from '../container/ContactUsContainer';
 import FoodField from '../container/FoodFieldContainer';
-import PageWithProductContainer from '../container/PageWithProductContainer';
+import product from '../container/PageWithProductContainer';
 
 const routes = [
     {
@@ -35,7 +35,7 @@ const routes = [
         component: FoodField
     }, {
         path: '/pageWithProduct',
-        component: PageWithProductContainer
+        component: product
     }
 ];
 
