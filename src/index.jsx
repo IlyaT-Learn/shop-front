@@ -15,6 +15,10 @@ import registerSaga from './saga/register.saga';
 import contactUs from './saga/contactUs.saga';
 import menuSaga from './saga/menu.saga';
 import productsSaga from './saga/products.saga';
+import productsInCartSaga from './saga/productsInCart.saga';
+import productsDescriptionSaga from './saga/productsDescription.saga'
+import putProductInCartSaga from './saga/putProductInCart.saga';
+import removeProductFromCartSaga from './saga/removeProductFromCart.saga';
 
 const store = initStore();
 const devTools = process.env.NODE_ENV === 'development' ? <DevTools/> : null;
@@ -25,6 +29,10 @@ sagaMiddleware.run(registerSaga);
 sagaMiddleware.run(contactUs);
 sagaMiddleware.run(menuSaga);
 sagaMiddleware.run(productsSaga);
+sagaMiddleware.run(productsInCartSaga);
+sagaMiddleware.run(productsDescriptionSaga);
+sagaMiddleware.run(putProductInCartSaga);
+sagaMiddleware.run(removeProductFromCartSaga);
 
 ReactDOM.render(
     <Provider store={store}>

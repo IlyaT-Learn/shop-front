@@ -6,6 +6,10 @@ import register from './register.reducer';
 import contactUs from './contactUs.reducer'
 import menu from './menu.reducer';
 import products from './products.reducer';
+import cart from './cart.reducer'
+import productsDescription from './productsDescription.reducer'
+import putProductInCart from './putProductInCart.reducer'
+import removeProductFromCart from './removeProductFromCart.reducer'
 
 const rootReducer = (history) =>
     combineReducers({
@@ -15,7 +19,11 @@ const rootReducer = (history) =>
         register,
         contactUs,
         menu,
-        products
+        products,
+        cart,
+        productsDescription,
+        putProductInCart,
+        removeProductFromCart
     });
 
 export default rootReducer;

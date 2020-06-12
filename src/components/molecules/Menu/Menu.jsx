@@ -12,7 +12,7 @@ const Menu = ({menuRequest}) => (
         </div>
         <div className={styles.unitWithCategories}>
             {menuRequest.status === SUCCESS ?
-                (menuRequest.categories.allCategories.map((item, iter) => (<Category data={item} key={iter}/>)))
+                (menuRequest.categories.map((item, iter) => (<Category data={item} key={iter}/>)))
                 :
                 null
             }

@@ -7,7 +7,10 @@ const menuRequest = async () => {
         headers: {
             'Content-Type': 'application/json;charset=utf-8'
         },
-        body: ''
+        body: JSON.stringify({
+            pageSize: 100,
+            currentPage: 1
+        })
     });
     const categories = await response.json();
 

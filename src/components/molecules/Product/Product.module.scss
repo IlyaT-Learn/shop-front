@@ -5,14 +5,20 @@
   height: max-content;
 }
 
-.imageImitate {
+.image {
   height: 150px;
   width: 150px;
-  background-color: #282c34;
 }
 
 .container p {
-  margin: 0;
+  margin: 0 20px;
+  text-align: right;
+  font-weight: bolder;
+}
+
+.container span {
+  color: blue;
+  font-weight: bolder;
 }
 
 .container span:hover {
@@ -51,5 +57,5 @@
 }
 
 .cartIconContainer:active {
-  transform: translateY(-140px) translateX(115px) scale(1.2);
+  transform: scale(1.2);
 }

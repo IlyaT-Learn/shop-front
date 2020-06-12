@@ -4,6 +4,9 @@ import LoginContainer from '../container/LoginContainer';
 import RegisterContainer from '../container/RegisterContainer';
 import ContactUsContainer from '../container/ContactUsContainer';
 import ProductsContainer from '../container/ProductsContainer';
+import CartContainer from '../container/CartContainer'
+import ProductContainer from '../container/ProductConteiner';
+import CheckoutPage from '../page/CheckoutPage/CheckoutPage';
 
 const routes = [
     {
@@ -32,6 +35,15 @@ const routes = [
     }, {
         path: '/products/:id',
         component: ProductsContainer
+    }, {
+        path: '/cart',
+        component: CartContainer
+    }, {
+        path: '/product/:id',
+        component: ProductContainer
+    }, {
+        path: '/checkout',
+        component: CheckoutPage
     }
 ];
 

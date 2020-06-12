@@ -13,7 +13,12 @@ const RegisterPage = ({onRegisterClick, registerRequestLoaderShow}) => {
     const [mail, setMail] = useState('');
     const [phone, setPhone] = useState('');
 
-    const passwordConfirmError = !!(password && passwordConfirm && password !== passwordConfirm);
+    const passwordCorrect = (password.length > 0) && (password === passwordConfirm);
+    const emailCorrect = mail.includes('@') && mail.includes('.');
+    const phoneCorrect = phone.includes('+') && phone.length === 13;
+    const firstNameCorrect = firstName.length > 2;
+    const lastNameCorrect = lastName.length > 2;
+    const loginCorrect = login.length > 3;
 
     const handleFirstNameChange = useCallback((e) => setFirstName(e.target.value), [setFirstName]);
     const handleLastNameChange = useCallback((e) => setLastName(e.target.value), [setLastName]);
@@ -25,17 +30,15 @@ const RegisterPage = ({onRegisterClick, registerRequestLoaderShow}) => {
     const handlePasswordConfirmChange = useCallback((e) => setPasswordConfirm(e.target.value), [setPasswordConfirm]);
 
     const handleRegisterClick = useCallback(() => {
-        if (!passwordConfirmError) {
-            onRegisterClick({
-                firstName,
-                lastName,
-                login,
-                password,
-                mail,
-                phone
-            });
-        }
-    }, [firstName, lastName, login, password, mail, phone, passwordConfirmError, onRegisterClick]);
+        onRegisterClick({
+            firstName,
+            lastName,
+            login,
+            password,
+            mail,
+            phone
+        })
+    }, [firstName, lastName, login, password, mail, phone, passwordCorrect, emailCorrect, phoneCorrect, onRegisterClick]);
 
     return (
         <div className={styles.container}>
@@ -47,6 +50,8 @@ const RegisterPage = ({onRegisterClick, registerRequestLoaderShow}) => {
                     <TextField
                         value={firstName}
                         onChange={handleFirstNameChange}
+                        error={!firstNameCorrect}
+                        helperText={firstNameCorrect}
                         label="Имя"
                         variant="outlined"
                     />
@@ -55,6 +60,7 @@ const RegisterPage = ({onRegisterClick, registerRequestLoaderShow}) => {
                 <div className={styles.field}>
                     <TextField
                         value={lastName}
+                        error={!lastNameCorrect}
                         onChange={handleLastNameChange}
                         label="Фамилия"
                         variant="outlined"
@@ -64,6 +70,7 @@ const RegisterPage = ({onRegisterClick, registerRequestLoaderShow}) => {
                 <div className={styles.field}>
                     <TextField
                         value={login}
+                        error={!loginCorrect}
                         onChange={handleLoginChange}
                         label="Логин"
                         variant="outlined"
@@ -83,9 +90,9 @@ const RegisterPage = ({onRegisterClick, registerRequestLoaderShow}) => {
                         <TextField
                             value={passwordConfirm}
                             onChange={handlePasswordConfirmChange}
-                            error={passwordConfirmError}
+                            error={!passwordCorrect}
                             label="Подтверждение пароля"
-                            helperText={passwordConfirmError ? 'Пароли не совпадают' : undefined}
+                            helperText={passwordCorrect ? undefined : 'Пароли не совпадают'}
                             variant="outlined"
                         />
                     </div>
@@ -95,6 +102,8 @@ const RegisterPage = ({onRegisterClick, registerRequestLoaderShow}) => {
                     <TextField
                         value={mail}
                         onChange={handleMailChange}
+                        error={!emailCorrect}
+                        helperText={emailCorrect ? undefined : 'Неверный адрес почты'}
                         label="Почта"
                         variant="outlined"
                     />
@@ -104,13 +113,22 @@ const RegisterPage = ({onRegisterClick, registerRequestLoaderShow}) => {
                     <TextField
                         value={phone}
                         onChange={handlePhoneChange}
+                        error={!phoneCorrect}
+                        helperText={phoneCorrect ? undefined : 'Некорректный номер'}
                         label="Телефон"
                         variant="outlined"
                     />
                 </div>
 
                 <div className={styles.field}>
-                    <Button variant="contained" color="secondary" disabled={passwordConfirmError}
+                    <Button variant="contained" color="secondary"
+                            disabled={
+                                !passwordCorrect ||
+                                !emailCorrect ||
+                                !phoneCorrect ||
+                                !firstNameCorrect ||
+                                !lastNameCorrect ||
+                                !loginCorrect}
                             onClick={handleRegisterClick}
                     > Register </Button>
                 </div>

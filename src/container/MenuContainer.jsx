@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {MENU_REQUEST} from '../action/menu.action'
 import Menu from '../components/molecules/Menu/Menu';
+import {PRODUCTS_DESCRIPTION_REQUEST} from '../action/productsDescription.action';
 
 const MenuContainer = () => {
     const dispatch = useDispatch();
@@ -10,6 +11,7 @@ const MenuContainer = () => {
 
     useEffect((data) => {
         dispatch(MENU_REQUEST(data));
+        dispatch(PRODUCTS_DESCRIPTION_REQUEST());
     }, [dispatch]);
 
     return (

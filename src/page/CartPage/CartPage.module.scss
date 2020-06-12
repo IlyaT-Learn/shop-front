@@ -1,0 +1,63 @@
+.container {
+  min-width: 400px;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  padding: 5%;
+}
+
+.footerContainer p {
+  text-align: right;
+  font-weight: bold;
+}
+
+.buttonContainer {
+  width: max-content;
+  margin: 0 0 0 auto;
+}
+
+table {
+  width: 90%;
+  margin: 5%;
+}
+
+th {
+  color: white;
+  background: linear-gradient(0, black, coral);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+td {
+  color: white;
+}
+
+.even {
+  background: linear-gradient(90rad, blue, green);
+}
+
+.odd {
+  background: linear-gradient(90rad, green, blue);
+}
+
+.button {
+  float: right;
+  color: #282c34;
+  margin: 5px;
+  background: linear-gradient(90rad, red, yellow);
+  padding: 5px;
+  border-radius: 10px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+
+.notBackgroundColor {
+  background-color: white;
+  border: 1px solid black;
+}

@@ -17,7 +17,7 @@ function* handleRegisterRequest(action) {
                 phone: action.payload.phone,
                 isAdmin: 0
             })
-        }).json();
+        });
         yield put(REGISTER_SUCCESS());
     } catch (e) {
         yield put(REGISTER_FAILURE(e.message));

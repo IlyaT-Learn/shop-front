@@ -5,7 +5,7 @@ import {FAILURE, REQUEST, SUCCESS, UNCALLED} from '../constants/request.constant
 const defaultState = {
     submitRequest: {
         status: UNCALLED,
-        result: null,
+        currentUser: null,
         error: null
     }
 };
@@ -17,22 +17,22 @@ const reduces = handleActions(
             submitRequest: {
                 ...state.submitRequest,
                 status: REQUEST,
-                result: null
+                currentUser: null
             }
         }),
-        [LOGIN_SUCCESS]: (state, data) => ({
+        [LOGIN_SUCCESS]: (state, action) => ({
             ...state,
             submitRequest: {
                 ...state.submitRequest,
                 status: SUCCESS,
-                result: data
+                currentUser: action.payload
             }
         }),
         [LOGIN_FAILURE]: (state, action) => ({
             ...state,
             submitRequest: {
                 status: FAILURE,
-                result: null,
+                currentUser: null,
                 error: action.payload
             }
         })

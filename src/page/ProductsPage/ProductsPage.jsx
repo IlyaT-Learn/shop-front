@@ -1,17 +1,16 @@
 import React from 'react';
 import styles from './ProductsPage.module.scss';
-import {SUCCESS} from '../../constants/request.constants';
 import Product from '../../components/molecules/Product/Product';
 
-const ProductsPage = ({productsRequest}) => {
+const ProductsPage = ({products, onPutProductInCart, onProductPage}) => {
 
     return (
         <div className={styles.container}>
-            {productsRequest.status === SUCCESS
-                ?
-                productsRequest.products.rows.map((item, iter) => (<Product productDescription={item} key={iter}/>))
-                :
-                null}
+            {products ? products.rows.map((item, iter) => (<Product productDescription={item}
+                                                                    key={iter}
+                                                                    onPutProductInCart={onPutProductInCart}
+                                                                    onProductPage={onProductPage}/>)) : null}
+
         </div>
     );
 };
