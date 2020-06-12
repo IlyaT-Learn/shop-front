@@ -1,0 +1,15 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.starContainer {
+  margin: 5px;
+  width: 20px;
+  height: 20px;
+}
+
+.starContainer:hover {
+  transform: scale(1.2);
+}

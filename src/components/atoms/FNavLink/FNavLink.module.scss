@@ -2,7 +2,20 @@
   cursor: pointer;
   display: flex;
   align-items: center;
-  margin-top:25px;
+  margin-top: 10px;
+}
+
+.arrowColor {
+  transition: .5s;
+  border: solid #717171;
+  border-width: 0 3px 3px 0;
+}
+
+.nameOfNavLink {
+  padding: 0 0 0 15px;
+  margin: 0;
+  transition: 0.5s;
+  color: #9c9c9c;
 }
 
 .navLink:hover {
@@ -17,16 +30,4 @@
     transition: 0.5s;
     padding: 0 5px 0 10px;
   }
-}
-
-.arrowColor {
-  transition: .5s;
-  border: solid #717171;
-}
-
-.nameOfNavLink {
-  padding: 0 0 0 15px;
-  margin: 0;
-  transition: 0.5s;
-  color: #9c9c9c;
 }

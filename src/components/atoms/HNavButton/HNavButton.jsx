@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './HNavButton.module.scss'
 
 const HNavButton = ({children, onClick}) => (
-    <a className={styles.navButton} onClick={onClick}>{children}</a>
+    <span className={styles.navButton} onClick={onClick}>{children}</span>
 );
 
 export default HNavButton;

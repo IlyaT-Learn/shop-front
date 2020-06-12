@@ -25,7 +25,7 @@ const reduces = handleActions(
             menuRequest: {
                 ...state.menuRequest,
                 status: SUCCESS,
-                categories: action.payload
+                categories: action.payload.allCategories.rows
             }
         }),
         [MENU_FAILURE]: (state, action) => ({

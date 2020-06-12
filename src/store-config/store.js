@@ -1,5 +1,5 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import { routerMiddleware } from 'connected-react-router';
+import {createStore, applyMiddleware, compose} from 'redux';
+import {routerMiddleware} from 'connected-react-router';
 import createSagaMiddleware from 'redux-saga';
 import reducer from '../reducer/index';
 import loggerMiddleware from './logger-middleware';
@@ -11,15 +11,15 @@ export const sagaMiddleware = createSagaMiddleware();
 const defaultMiddlewares = [sagaMiddleware, routerMiddleware(history)];
 
 const composedMiddlewares = () =>
-  process.env.NODE_ENV === 'development'
-    ? compose(
+    process.env.NODE_ENV === 'development'
+        ? compose(
         applyMiddleware(...defaultMiddlewares, loggerMiddleware),
         DevTools.instrument()
-      )
-    : compose(applyMiddleware(...defaultMiddlewares));
+        )
+        : compose(applyMiddleware(...defaultMiddlewares));
 
 const initialize = (initialState) => {
-      return createStore(reducer(history), initialState, composedMiddlewares());
+    return createStore(reducer(history), initialState, composedMiddlewares());
 };
 
 export default initialize;
