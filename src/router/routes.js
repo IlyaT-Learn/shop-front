@@ -4,13 +4,13 @@ import LoginContainer from '../container/LoginContainer';
 import RegisterContainer from '../container/RegisterContainer';
 import ContactUsContainer from '../container/ContactUsContainer';
 import FoodField from '../container/FoodFieldContainer';
-import product from '../container/PageWithProductContainer';
+import Product from '../container/PageWithProductContainer';
 
 const routes = [
     {
         exact: true, //обязательное полное совпадение
         path: '/',
-        component: () => (<>Main</>)  // тут должен быть компонент(контейнер) импортированный
+        component: () => (<>Main</>)  // тут должен быть компонент(контейнер) импортированNный
     },
     {
         // path: '/result/:examRoute',   //вот так можно указать параметры
@@ -34,8 +34,8 @@ const routes = [
         path: '/foodField/:id',
         component: FoodField
     }, {
-        path: '/pageWithProduct',
-        component: product
+        path: '/product',
+        component: Product
     }
 ];
 

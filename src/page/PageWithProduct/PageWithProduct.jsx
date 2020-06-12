@@ -3,11 +3,11 @@ import styles from './PageWithProduct.module.scss';
 import cn from 'classnames';
 
 const PageWithProduct = () => {
-    const [status, changeStatus] = useState(false);
+    const [status, setStatus] = useState(false);
 
     const openSection = useCallback((newStatus) => {
-        changeStatus(newStatus)
-    });
+        setStatus(newStatus)
+    },[]);
 
     return (
         <div className={styles.pageContainer}>
@@ -20,9 +20,9 @@ const PageWithProduct = () => {
                         <p className={styles.nameOfTheProduct}>Имя продукта</p>
                         <div className={styles.unitWithAssessment}>
                             <p><span className={styles.boldText}>Рейтинг: </span></p>
-                            <a onClick={() => changeStatus(true)} href="#reviews "
+                            <a onClick={useCallback(() => setStatus(true),[])} href="#reviews "
                                className={styles.reviewsAnchor}>Отзывы</a>
-                            <a onClick={() => changeStatus(true)} href="#writeReview "
+                            <a onClick={useCallback(() => setStatus(true),[])} href="#writeReview "
                                className={styles.writeReviewButton}>Написать отзыв</a>
                         </div>
                         <p><span className={styles.boldText}>Марка: </span></p>
@@ -44,7 +44,7 @@ const PageWithProduct = () => {
             </div>
             <div className={styles.descriptionOfProduct}>
                 <div className={styles.unitWithSectionButtons}>
-                    <p onClick={() => openSection(false)}
+                    <p onClick={useCallback(() => openSection(false),[])}
                        className={cn({
                            [styles.selectedSectionButton]: !status,
                            [styles.sectionButton]: status
@@ -53,7 +53,7 @@ const PageWithProduct = () => {
                         [styles.selectedSectionButton]: status,
                         [styles.sectionButton]: !status
                     })}
-                       onClick={() => openSection(true)}>Отзывы(1)</p>
+                       onClick={useCallback(() => openSection(true),[])}>Отзывы(1)</p>
                 </div>
                 <div className={cn({
                     [styles.description]: !status,
